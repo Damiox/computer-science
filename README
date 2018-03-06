@@ -2,7 +2,7 @@ Hi!, my name is Damian Nardelli and I am a Software Engineer.
 This is my personal repo to keep track of my computer science-related exercises.
 You will find here solutions to some CS problems that I gathered through CTCI, geeksforgeeks.org and Hackerrank.com
 
-Note: you may find this code useful, but please take into account that because of the essence we are doing some nasty things.
+Note: you may find this code useful, but please take into account that because of the characteristics around these problems is that sometimes we are doing some "nasty" things.
 For instance, we are violating the `Encapsulation` OOP fundamental / principle when implementing some data structures without defining setter/getters methods.
-I was not thinking purely in OOP when I did these execises. I was mainly focused on the Big O, correctness and code simplicity.
+I was not thinking purely in OOP when I did these exercises. I was mainly focused on the Big O, correctness and code simplicity.
 At the same time, I wanted to have a single java file for each of these problems.
