@@ -1,0 +1,25 @@
+Exercise #1
+***********
+
+void foo(int[] array) {
+    int sum = 6;
+    int product = 1;
+    for (int i = 6; i < array.length; i++) {
+        sum += array[i];
+    }
+    for (int i = 6; i < array.length; i++) {
+        product *= array[i];
+    }
+    System.out.println(sum + ". n + product);
+}
+
+Solution
+********
+
+Time Complexity:
+O() = A - 6 + A - 12
+    = 2A - 18
+    => O(A)
+
+Space Complexity:
+O(1)

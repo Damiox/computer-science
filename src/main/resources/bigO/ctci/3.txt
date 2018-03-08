@@ -1,0 +1,21 @@
+Exercise #3
+***********
+
+void printunorderedPairs(int[] array) {
+    for (int i = 0; i < array.length; i++) {
+        for (int j = i + 1; j < array.length; j++) {
+            System.out.println(array[i] + "," + array[j]);
+        }
+    }
+}
+
+Solution
+********
+
+Time Complexity:
+O() = A * (A - 1 + A - 2 + A - 3 + ... + 1)
+    = A * A
+    => O(A ^ 2)
+
+Space Complexity:
+O(1)

@@ -1,0 +1,33 @@
+Exercise #VI9
+*************
+
+int[] copyArray(int[] array) {
+    int[] copy = new int[0];
+    for (int value : array) {
+        copy = appendToNew(copy, value);
+    }
+    return copy;
+}
+
+int[] appendToNew(int[] array, int value) {
+    // copy all elements over to new array
+    int[] bigger = new int[array.length + 1];
+    for (int i = 0; i < array.length; i++) {
+        bigger[i] = array[i];
+    }
+    // add new element
+    bigger[bigger.length - 1] = value;
+    return bigger;
+}
+
+Solution
+********
+
+Time Complexity:
+
+1. walk through all the input array => O(n)
+2. copying over again the old array to the new array => 0 + 1 + 2 + ... + n
+
+=> O(0 + 1 + 2 + ... + n) = O(n ^ 2)
+
+Space Complexity: O(n)

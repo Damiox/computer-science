@@ -1,0 +1,26 @@
+Exercise #VI10
+**************
+
+int sumDigits(int n) {
+    int sum = 0;
+    while (n > 0) {
+        sum += n % 10;
+        n /= 10;
+    }
+    return sum;
+}
+
+Solution
+********
+
+Time Complexity:
+sumDigits(1000)
+1000 > 0
+100 > 0
+10 > 0
+0 > 0
+// the above means that we are dividing n by 10 in each for-loop cycle, that sounds like a logarithm big O expression
+
+=> O(log n)
+
+Space Complexity: O(1)

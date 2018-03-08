@@ -1,0 +1,48 @@
+Exercise #13
+************
+
+int fib(int n) {
+    if (n <= 0) return 0;
+    else if (n == 1) return 1;
+    return fib(n - 1) + fib(n - 2);
+}
+
+Solution
+********
+
+Time Complexity:
+fib(6)
+    fib(5)
+        fib(4)
+            fib(3)
+                fib(2)
+                    fib(1) => 1
+                    fib(0) => 0
+                fib(1) => 1
+            fib(2)
+                fib(1) => 1
+                fib(0) => 0
+        fib(3)
+            fib(2)
+                fib(1) => 1
+                fib(0) => 0
+            fib(1) => 1
+    fib(4)
+        fib(3)
+            fib(2)
+                fib(1) => 1
+                fib(0) => 0
+            fib(1) => 1
+        fib(2)
+            fib(1) => 1
+            fib(0) => 0
+
+fib(6) = 1+0+1+1+0+1+0+1+1+0+1+1+0
+       = 1+1 + 1+1 + 1+1 + 1+1 = 8
+
+O() = branches ^ depth
+    => O(2 ^ n)
+
+Note: fib(1) and fib(0) is invoked 13 times. If we divide 13 by 2 we get 1.625, so correct answer is O(1.625 ^ n)
+
+Space Complexity: O(n)

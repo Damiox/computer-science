@@ -1,0 +1,18 @@
+Exercise #7
+***********
+
+Which of the following are equivalent to O(N)? Why?
+1) O(N + P), where P < O(N / 2)
+2) O(2N)
+3) O(N + log N)
+4) O(N + M)
+
+Solution
+********
+
+Answer is 1, 2 and 3.
+
+1) P is dependant of N, and it's always less than N => O(N)
+2) dropping constant => O(N)
+3) N is the dominant term because it'll always grow more than log N => O(N)
+4) no relation between N and M, then we can't reduce this => O(N + M)

@@ -1,0 +1,45 @@
+Exercise #2
+***********
+
+public static Double average(Integer[] values) {
+    Integer sum = 0;
+    for (int i = 0; i < values.length; i++) {
+        sum += values[i];
+    }
+    return sum / values.length;
+}
+public static IDeque < Integer > slidingAvg(
+        Stack < Integer > values, int width
+) {
+    IDeque < Integer > window = new ArrayDeque < > (width);
+    IDeque < Double > averages = new ArrayDeque < > (values.size());
+    for (int i = 0; i < width; i++) {
+        window.pushFirst(0);
+    }
+    for (int value: values) {
+        window.pullLast();
+        window.pushFirst(value);
+        Integer[] roll = window.toArray(new Integer[0]);
+        Double average = average(roll);
+        averages.push(average);
+    }
+    return averages;
+}
+
+Solution
+********
+
+Big O = f()
+=>
+
+f() = C + C + (C * W) + (C + C + ?? + ?? + C) * V
+f() = 2C + CW + (3C + ?? + ??) * V
+f() = 2C + CW + (3C + W + (C + C * V + C)) * V
+f() = 2C + CW + (3C + W + (2C + CV)) * V
+// drop constants
+f() = W + (W + V) * V
+f() = W + WV + V^2
+f() = W(V + 1) + V^2
+
+Time Complexity = O(W(V + 1) + V^2)
+Space Complexity = O(W + V)

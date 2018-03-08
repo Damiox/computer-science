@@ -1,0 +1,57 @@
+Exercise #VI11
+**************
+
+int numChars = 26;
+void printSortedStrings(int remaining) {
+    printSortedStrings(remaining, "");
+}
+
+void printSortedStrings(int remaining, String prefix) {
+    if (remaining == 0) {
+        if (isInOrder(prefix)) {
+            System.out.println(prefix);
+        }
+    } else {
+        for (int i = 0; i < numChars; i++) {
+            char c = ithLetter(i);
+            printSortedStrings(remaining - 1, prefix + c);
+        }
+    }
+}
+
+boolean isInOrder(String s) {
+    for (int i = 1; i < s.length(); i++) {
+        int prev = ithLetter(s.charAt(i - 1));
+        int curr = ithLetter(s.charAt(i));
+        if (prev > curr) {
+            return false;
+        }
+    }
+    return true;
+}
+
+char ithLetter(int i) {
+    return (char) (((int) 'a') + i);
+}
+
+Solution
+********
+
+Time Complexity:
+
+ithLetter = O(1)
+isInOrder = O(s)
+
+printSortedStrings(10, "")
+    for 26 times and:
+        printSortedStrings(9, "" + letter) each time
+            printSortedStrings(8, "letter" + letter) each time
+                ...
+    => O(26 ^ s) following rule O(branches ^ depth)
+
+=> Sysout being printed remaining times
+=> isInOrder being invoked 26 * remaining times
+
+=> O(s * 26 ^ s)
+
+Space Complexity: O(n)

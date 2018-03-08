@@ -1,0 +1,50 @@
+Exercise #VI4
+*************
+
+int div(int a, int b) {
+    int count = 0;
+    int sum = b;
+    while (sum <= a) {
+        sum += b;
+        count++;
+    }
+    return count;
+}
+
+Solution
+********
+
+Time Complexity:
+
+// Checking how 'b' grows:
+div(1, 10000)
+    sum = 10000
+    while (10000 <= 1) {
+        ...
+    }
+    // ^^^ not that much...
+
+// Checking how 'a' grows:
+div(10000, 1)
+    sum = 1
+    while (1 <= 10000) {
+        ...
+    }
+    // ^^^ definetely this one is alarming
+
+// Checking how 'a' and 'b' grow together:
+div (100, 20)
+    sum = 20
+    while( 20 <= 100) {
+        sum += 20
+    }
+    // then executions would look like:
+    // sum = 20
+    // sum = 40
+    // sum = 60
+    // sum = 80
+    // sum = 100
+
+=> O(a / b)
+
+Space Complexity: O(1)

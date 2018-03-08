@@ -1,0 +1,39 @@
+Exercise #VI5
+*************
+
+int sqrt(int n) {
+    return sqrt_helper(n, 1, n);
+}
+
+int sqrt_helper(int n, int min, int max) {
+    if (max < min) return -1; // no square root
+    int guess = (min + max) / 2;
+    if (guess * guess == n) { // found it!
+        return guess;
+    } else if (guess * guess < n) {// too low
+        return sqrt_helper(n, guess + 1, max) // try higher
+    } else { // too high
+        return sqrt_helper(n, min, guess - 1); // try lower
+    }
+}
+
+Solution
+********
+
+Time Complexity:
+
+sqrt(16)
+    sqrt_helper(16, 1, 16)
+        sqrt_helper(16, 1, 7)
+            4!
+
+sqrt(64)
+    sqrt_helper(64, 1, 64)
+        sqrt_helper(64, 1, 31)
+            sqrt_helper(64, 1, 15)
+                sqrt_helper(64, 1, 7)
+                    4!
+
+=> O(log n)
+
+Space Complexity: O(log n)

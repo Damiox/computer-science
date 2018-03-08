@@ -1,0 +1,23 @@
+Exercise #5
+***********
+
+void printUnorderedPairs(int[] arrayA, int[] arrayB) {
+    for (int i = 0; i < arrayA.length; i++) {
+        for (int j = 0; j < arrayB.length; j++) {
+            for (int k = 0; k < 10000; k++) {
+                System.out.println(arrayA[i] + "," + arrayB[j]);
+            }
+        }
+    }
+}
+
+Solution
+********
+
+Time Complexity:
+O() = A * B * 1000 * 1
+    = A * B
+    => O(AB)
+
+Space Complexity:
+O(1)

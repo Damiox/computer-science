@@ -1,0 +1,54 @@
+Exercise #12
+************
+
+void permutation(String str) {
+    permutation(str, "");
+}
+
+void permutation(String str, String prefix) {
+    if (str.length() == 0) {
+        System.out.println(prefix);
+    } else {
+        for (int i = 0; i < str.length(); i++) {
+            String rem = str.substring(0, i) + str.substring(i + 1);
+            permutation(rem, prefix + str.charAt(i));
+        }
+    }
+}
+
+Solution
+********
+
+Time Complexity:
+    e.g. str = "den"
+    permutation("den", "")
+        permutation("en", "" + "d");
+            permutation("n", "d" + "e");
+                permutation("", "de" + "n");
+                    -> "den"
+            permutation("e", "d" + "n");
+                permutation("", "dne");
+                    -> "dne"
+        permutation("dn", "" + "e");
+            permutation("n", "e" + "d");
+                permutation("", "edn");
+                    -> "edn"
+            permutation("d", "e" + "n");
+                permutation("", "end");
+                    -> "end"
+        permutation("de", "" + "n");
+            permutation("e", "n" + "d");
+                permutation("", "nde");
+                    -> "nde"
+            permutation("d", "n" + "e");
+                permutation("", "ned");
+                    -> "ned"
+
+Factorial Theory = Its most basic occurrence is the fact that there are n! ways to arrange n distinct objects into a sequence.
+
+We have here 3 different objects: "d", "e", "n" => 3! = 3 * 2 * 1 = 6
+
+=> we invoke permutation n * n! times, and for each permutation we print out the string n times
+=> o(n ^ 2 * n!)
+
+Space Complexity: O(n)

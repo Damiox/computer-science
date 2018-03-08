@@ -1,0 +1,33 @@
+Exercise #1
+***********
+
+Prefix sums of a sequence of numbers a0,a1,a2,a3,... are given by a second sequence of numbers s0,s1,s2,s3,... defined as
+sj = ∑(i=1 to j)ai
+
+The Python code below computes prefix sums.
+
+def s(a, j):
+    prefix_sum = 0
+    while j >= 0:
+        i = 0
+        while i <= j:
+            prefix_sum += a[i]
+            i += 1
+        j -= 1
+        return prefix_sum
+
+Solution
+********
+
+Big O = f()
+=>
+
+f() = C + (C + (C + C) * (j-1) + C) * j
+f() = C + (2C + 2C * (j-1)) * j
+// droping C constants...
+f() = (j-1) * j = j^2 - j
+// keeping the dominant term...
+f() = j^2
+
+Time Complexity = O(n^2)
+Space Complexity = O(1)

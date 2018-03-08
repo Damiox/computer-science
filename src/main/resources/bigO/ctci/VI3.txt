@@ -1,0 +1,16 @@
+Exercise #VI3
+*************
+
+int mod(int a, int b) {
+    if (b <= 0) {
+        return -1;
+    }
+    int div = a / b;
+    return a - div * b;
+}
+
+Solution
+********
+
+Time Complexity: O(1)
+Space Complexity: O(1)

@@ -1,0 +1,27 @@
+Exercise #VI12
+**************
+
+int intersection(int[] a, int[] b) {
+    mergesort(b);
+    int intersect = 0;
+    for (int x : a) {
+        if (binarySearch(b, x) >= 0) {
+            intersect++;
+        }
+    }
+    return intersect;
+}
+
+Solution
+********
+
+Time Complexity:
+
+mergesort(b); // O(n * log n)
+binarySearch(b, x) // O(log n)
+
+=> a.length times the 'binarySearch' is being invoked
+=> O(a * log b) and considering the mergesort, then:
+=> O(b * log b + a * log b) = O((b + a) * log b)
+
+Space Complexity: O(1) (without considering binarySearch/mergeSort space requirements

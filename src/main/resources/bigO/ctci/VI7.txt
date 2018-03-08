@@ -1,0 +1,9 @@
+Exercise #VI7
+*************
+
+If a binary search tree is not balanced, how long might it take (worst case) to find an element in it?
+
+Solution
+********
+
+Time Complexity: O(n)

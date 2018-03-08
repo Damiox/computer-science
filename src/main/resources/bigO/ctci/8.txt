@@ -1,0 +1,25 @@
+Exercise #8
+***********
+
+Suppose we had an algorithm that took in an array of strings, sorted each string, and then sorted the full array.
+What would the runtime be?
+
+Solution
+********
+
+Pseudocode to depict the algorithm:
+
+function {
+    for (i = 0 ; i < A.length ; i++) {
+        S = A[i];
+        sortString(S);
+    }
+    sortArray(A);
+}
+
+1) sortString time complexity is for the best sorting algorithm: O(S * log S)
+2) sortArray time complexity is, again, for the best sorting algorithm: O(A * log A), but we need to compare strings,
+so we need to take that comparison into account, that would be O(S * A * log A)
+3) To sum up, this would take:
+3.a) O() = O(A * S * log S + S * A * log A)
+         = O(S * A * (log S + log A))

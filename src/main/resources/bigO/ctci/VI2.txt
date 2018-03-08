@@ -1,0 +1,31 @@
+Exercise #VI2
+*************
+
+int power(int a, int b) {
+    if (b < 0) {
+        return 0; // error
+    } else if (b == 0) {
+        return 1;
+    } else {
+        return a * power(a, b - 1);
+    }
+}
+
+Solution
+********
+
+Time Complexity:
+power(2, 3)
+    2 * power(2, 2)
+        2 * power(2, 1)
+            2 * power(2, 0)
+                1
+            2 * 1
+        2 * 2
+    2 * 4
+8
+
+=> O(b)
+
+
+Space Complexity: O(b)
