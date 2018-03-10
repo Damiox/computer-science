@@ -1,4 +1,4 @@
-package com.github.damiox.computerscience.exercises;
+package com.github.damiox.computerscience.exercises.math;
 
 import com.github.damiox.computerscience.Exercise;
 

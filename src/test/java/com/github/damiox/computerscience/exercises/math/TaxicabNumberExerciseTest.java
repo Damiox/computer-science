@@ -1,6 +1,7 @@
-package com.github.damiox.computerscience.exercises;
+package com.github.damiox.computerscience.exercises.math;
 
 import com.github.damiox.computerscience.Exercise;
+import com.github.damiox.computerscience.exercises.math.TaxicabNumberExercise;
 import org.junit.Assert;
 import org.junit.Test;
 
