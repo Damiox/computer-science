@@ -1,4 +1,6 @@
-package com.github.damiox.computerscience.exercises.sorting;
+package com.github.damiox.computerscience.exercises.sorting.iterative;
+
+import com.github.damiox.computerscience.exercises.sorting.SortingExercise;
 
 /**
  * This exercise is about sorting an array of number following the Selection Sort algorithm.
@@ -9,7 +11,7 @@ package com.github.damiox.computerscience.exercises.sorting;
  *
  * @author dnardelli
  */
-public class SelectionSortExercise extends SortingExercise {
+public class SelectionSortIterativeExercise extends SortingExercise {
 
     @Override
     public Results<Integer[]> solve(Params<Integer[]> params) {
@@ -50,7 +52,7 @@ public class SelectionSortExercise extends SortingExercise {
         // then: swap(array, 2, 4) -> [5, 6, 11, 12, 13]
         // i = 3 ; minJ = 3 ; j = 4 -> array[4] < array[3] ? no
         // finally, sorted array is: [5, 6, 11, 12, 13]
-        
+
     }
 
 }

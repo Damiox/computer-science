@@ -1,4 +1,6 @@
-package com.github.damiox.computerscience.exercises.sorting;
+package com.github.damiox.computerscience.exercises.sorting.iterative;
+
+import com.github.damiox.computerscience.exercises.sorting.SortingExercise;
 
 /**
  * This exercise is about sorting an array of number following the Insertion Sort algorithm.
@@ -9,7 +11,7 @@ package com.github.damiox.computerscience.exercises.sorting;
  *
  * @author dnardelli
  */
-public class InsertionSortExercise extends SortingExercise {
+public class InsertionSortIterativeExercise extends SortingExercise {
 
     @Override
     public Results<Integer[]> solve(Params<Integer[]> params) {

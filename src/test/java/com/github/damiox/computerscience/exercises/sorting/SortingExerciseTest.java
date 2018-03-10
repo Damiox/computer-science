@@ -1,6 +1,10 @@
 package com.github.damiox.computerscience.exercises.sorting;
 
 import com.github.damiox.computerscience.Exercise;
+import com.github.damiox.computerscience.exercises.sorting.iterative.InsertionSortIterativeExercise;
+import com.github.damiox.computerscience.exercises.sorting.iterative.SelectionSortIterativeExercise;
+import com.github.damiox.computerscience.exercises.sorting.recursive.InsertionSortRecursiveExercise;
+import com.github.damiox.computerscience.exercises.sorting.recursive.SelectionSortRecursiveExercise;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -8,12 +12,14 @@ public class SortingExerciseTest {
 
     @Test
     public void testSelectionSort() {
-        this.testSortingExercise(new SelectionSortExercise());
+        this.testSortingExercise(new SelectionSortIterativeExercise());
+        this.testSortingExercise(new SelectionSortRecursiveExercise());
     }
 
     @Test
     public void testInsertionSort() {
-        this.testSortingExercise(new InsertionSortExercise());
+        this.testSortingExercise(new InsertionSortIterativeExercise());
+        this.testSortingExercise(new InsertionSortRecursiveExercise());
     }
 
     private void testSortingExercise(SortingExercise sortingExercise) {
