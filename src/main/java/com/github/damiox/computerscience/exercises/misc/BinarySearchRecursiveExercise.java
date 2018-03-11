@@ -2,6 +2,14 @@ package com.github.damiox.computerscience.exercises.misc;
 
 import com.github.damiox.computerscience.Exercise;
 
+/**
+ * Binary Search
+ *
+ * Time Complexity: O(log n)
+ * Space Complexity: O(log n)
+ *
+ * @author dnardelli
+ */
 public class BinarySearchRecursiveExercise implements Exercise<BinarySearchRecursiveExercise.ExerciseParams, Boolean> {
 
     public static class ExerciseParams {
