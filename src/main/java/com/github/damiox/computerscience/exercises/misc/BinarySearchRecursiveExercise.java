@@ -2,7 +2,7 @@ package com.github.damiox.computerscience.exercises.misc;
 
 import com.github.damiox.computerscience.Exercise;
 
-public class BinarySearchExercise implements Exercise<BinarySearchExercise.ExerciseParams, Boolean> {
+public class BinarySearchRecursiveExercise implements Exercise<BinarySearchRecursiveExercise.ExerciseParams, Boolean> {
 
     public static class ExerciseParams {
         public final Integer[] A;
@@ -15,7 +15,7 @@ public class BinarySearchExercise implements Exercise<BinarySearchExercise.Exerc
     }
 
     @Override
-    public Boolean solve(final BinarySearchExercise.ExerciseParams params) {
+    public Boolean solve(final BinarySearchRecursiveExercise.ExerciseParams params) {
         return search(params.A, params.v, 0, params.A.length);
     }
 
@@ -23,12 +23,12 @@ public class BinarySearchExercise implements Exercise<BinarySearchExercise.Exerc
         int mid = i + n / 2;
 
         // Value out of bounds - we won't find it
-        if (i < 0 || n == 0) {
+        if (i > A.length - 1 || n == 0) {
             return false;
         }
 
         if (A[mid] < value) {
-            return search(A, value, mid, n / 2);
+            return search(A, value, mid + 1, n / 2);
         } else if (A[mid] > value) {
             return search(A, value, i, n / 2);
         }
