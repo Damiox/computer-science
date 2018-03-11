@@ -16,8 +16,8 @@ import java.util.Arrays;
 public class InsertionSortRecursiveExercise extends SortingExercise {
 
     @Override
-    public Results<Integer[]> solve(Params<Integer[]> params) {
-        return () -> this.solve(params.getParams(), 0);
+    public Integer[] solve(final Integer[] A) {
+        return this.solve(A, 0);
 
         // Manual Debugging for [12, 11, 13, 5, 6]
         // solve(A, 0)

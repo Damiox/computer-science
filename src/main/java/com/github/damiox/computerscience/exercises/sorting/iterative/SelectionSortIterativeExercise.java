@@ -14,28 +14,26 @@ import com.github.damiox.computerscience.exercises.sorting.SortingExercise;
 public class SelectionSortIterativeExercise extends SortingExercise {
 
     @Override
-    public Results<Integer[]> solve(Params<Integer[]> params) {
-        Integer[] array = params.getParams();
-
-        for (int i = 0 ; i < array.length - 1 ; i++) {
+    public Integer[] solve(final Integer[] A) {
+        for (int i = 0 ; i < A.length - 1 ; i++) {
 
             // Honestly, I would say this algorithm is the easiest one to implement
             // Clearly the time complexity is horrendously inefficient.
             int minJ = i;
 
-            for (int j = i + 1 ; j < array.length ; j++) {
-                if (array[j] < array[minJ]) {
+            for (int j = i + 1 ; j < A.length ; j++) {
+                if (A[j] < A[minJ]) {
                     minJ = j;
                 }
             }
 
             if (minJ != i) {
-                swap(array, i, minJ);
+                swap(A, i, minJ);
             }
 
         }
 
-        return () -> array;
+        return A;
 
         // Manual Debugging for [12, 11, 13, 5, 6]
         // i = 0 ; minJ = 0 ; j = 1 -> array[1] < array[0] ? yes -> minJ = 1

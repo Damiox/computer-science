@@ -14,10 +14,8 @@ import com.github.damiox.computerscience.exercises.sorting.SortingExercise;
 public class InsertionSortIterativeExercise extends SortingExercise {
 
     @Override
-    public Results<Integer[]> solve(Params<Integer[]> params) {
-        final Integer[] array = params.getParams();
-
-        for (int i = 0 ; i < array.length ; i++) {
+    public Integer[] solve(final Integer[] A) {
+        for (int i = 0 ; i < A.length ; i++) {
 
             int k = i;
             int j = i - 1;
@@ -30,15 +28,15 @@ public class InsertionSortIterativeExercise extends SortingExercise {
             // that was just swapped and repeating this process.
             // But it turns out that A[k] will always be the initial A[i] that we are evaluating.
             // So both implementations are doing the same.
-            while (j >= 0 && array[k] < array[j]) {
-                swap(array, k, j);
+            while (j >= 0 && A[k] < A[j]) {
+                swap(A, k, j);
                 k = j;
                 j = k - 1;
             }
 
         }
 
-        return () -> array;
+        return A;
 
         // Manual Debugging for [12, 11, 13, 5, 6]
         // i = 0

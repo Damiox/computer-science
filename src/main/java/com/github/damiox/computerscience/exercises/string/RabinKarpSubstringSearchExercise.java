@@ -19,18 +19,18 @@ import com.github.damiox.computerscience.Exercise;
  *
  * @author dnardelli
  */
-public class RabinKarpSubstringSearchExercise implements Exercise<String[]> {
+public class RabinKarpSubstringSearchExercise implements Exercise<String[], Boolean> {
 
     private static final long PRIME_NUMBER = 101;
 
     @Override
-    public Results<Boolean> solve(Params<String[]> params) {
-        if (params.getParams().length != 2) {
+    public Boolean solve(String[] params) {
+        if (params.length != 2) {
             throw new IllegalArgumentException("Params need to be 2 strings");
         }
 
-        String pattern = params.getParams()[0];
-        String text = params.getParams()[1];
+        String pattern = params[0];
+        String text = params[1];
 
         if (pattern.length() > text.length()) {
             throw new IllegalStateException("Pattern is greater than text");
@@ -55,8 +55,7 @@ public class RabinKarpSubstringSearchExercise implements Exercise<String[]> {
         }
 
         // Did we get match?
-        final Boolean match = hashPattern == hashMatching;
-        return () -> match;
+        return hashPattern == hashMatching;
 
         // Manual Debugging for pattern="rap" and text="DADrapDAD"
         // Pn = 3

@@ -18,12 +18,10 @@ import java.util.stream.Collectors;
  *
  * @author dnardelli
  */
-class TaxicabNumberExercise implements Exercise<Integer> {
+class TaxicabNumberExercise implements Exercise<Integer, Map<Long, List<TaxicabNumberExercise.Pair>>> {
 
-    public Results<Map<Long, List<Pair>>> solve(Params<Integer> params) {
+    public Map<Long, List<Pair>> solve(Integer n) {
         long t1 = System.currentTimeMillis();
-
-        int n = params.getParams();
 
         Map<Long, List<Pair>> hashedTaxicabs = new HashMap<>(n / 2);
 
@@ -39,8 +37,7 @@ class TaxicabNumberExercise implements Exercise<Integer> {
 
         System.out.println("took " + (System.currentTimeMillis() - t1) + " ms");
 
-        return () ->
-            hashedTaxicabs.entrySet().stream()
+        return hashedTaxicabs.entrySet().stream()
                 .filter(t -> t.getValue().size() >= 2)
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }

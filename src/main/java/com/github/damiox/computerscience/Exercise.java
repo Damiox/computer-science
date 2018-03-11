@@ -1,15 +1,7 @@
 package com.github.damiox.computerscience;
 
-public interface Exercise<T> {
+public interface Exercise<T, R> {
 
-    Results solve(Params<T> params);
-
-    interface Params<T> {
-        T getParams();
-    }
-
-    interface Results<T> {
-        T getResults();
-    }
+    R solve(T params);
 
 }

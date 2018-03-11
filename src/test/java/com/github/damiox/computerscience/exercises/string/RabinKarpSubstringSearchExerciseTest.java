@@ -7,19 +7,19 @@ public class RabinKarpSubstringSearchExerciseTest {
 
     @Test
     public void testSolve() {
-        Assert.assertTrue(new RabinKarpSubstringSearchExercise().solve(() -> new String[] { "rap", "DADrapDAD" }).getResults());
-        Assert.assertTrue(new RabinKarpSubstringSearchExercise().solve(() -> new String[] { "rap", "rapDAD" }).getResults());
-        Assert.assertTrue(new RabinKarpSubstringSearchExercise().solve(() -> new String[] { "rap", "DADrap" }).getResults());
-        Assert.assertTrue(new RabinKarpSubstringSearchExercise().solve(() -> new String[] { "rap", "DADraaaprapDAD" }).getResults());
-        Assert.assertTrue(new RabinKarpSubstringSearchExercise().solve(() -> new String[] { "rap", "rap" }).getResults());
-        Assert.assertTrue(new RabinKarpSubstringSearchExercise().solve(() -> new String[] { "aaa", "xxaaaxx" }).getResults());
-        Assert.assertTrue(new RabinKarpSubstringSearchExercise().solve(() -> new String[] { "aaa", "aaa" }).getResults());
-        Assert.assertTrue(new RabinKarpSubstringSearchExercise().solve(() -> new String[] { "aaa", "aaaa" }).getResults());
-        Assert.assertTrue(new RabinKarpSubstringSearchExercise().solve(() -> new String[] { "aaa", "aaaxx" }).getResults());
-        Assert.assertFalse(new RabinKarpSubstringSearchExercise().solve(() -> new String[] { "rap", "DADRap" }).getResults());
-        Assert.assertFalse(new RabinKarpSubstringSearchExercise().solve(() -> new String[] { "rap", "ra3p" }).getResults());
-        Assert.assertFalse(new RabinKarpSubstringSearchExercise().solve(() -> new String[] { "rap", "par" }).getResults());
-        Assert.assertFalse(new RabinKarpSubstringSearchExercise().solve(() -> new String[] { "aaa", "aaA" }).getResults());
+        Assert.assertTrue(new RabinKarpSubstringSearchExercise().solve(new String[] { "rap", "DADrapDAD" }));
+        Assert.assertTrue(new RabinKarpSubstringSearchExercise().solve(new String[] { "rap", "rapDAD" }));
+        Assert.assertTrue(new RabinKarpSubstringSearchExercise().solve(new String[] { "rap", "DADrap" }));
+        Assert.assertTrue(new RabinKarpSubstringSearchExercise().solve(new String[] { "rap", "DADraaaprapDAD" }));
+        Assert.assertTrue(new RabinKarpSubstringSearchExercise().solve(new String[] { "rap", "rap" }));
+        Assert.assertTrue(new RabinKarpSubstringSearchExercise().solve(new String[] { "aaa", "xxaaaxx" }));
+        Assert.assertTrue(new RabinKarpSubstringSearchExercise().solve(new String[] { "aaa", "aaa" }));
+        Assert.assertTrue(new RabinKarpSubstringSearchExercise().solve(new String[] { "aaa", "aaaa" }));
+        Assert.assertTrue(new RabinKarpSubstringSearchExercise().solve(new String[] { "aaa", "aaaxx" }));
+        Assert.assertFalse(new RabinKarpSubstringSearchExercise().solve(new String[] { "rap", "DADRap" }));
+        Assert.assertFalse(new RabinKarpSubstringSearchExercise().solve(new String[] { "rap", "ra3p" }));
+        Assert.assertFalse(new RabinKarpSubstringSearchExercise().solve(new String[] { "rap", "par" }));
+        Assert.assertFalse(new RabinKarpSubstringSearchExercise().solve(new String[] { "aaa", "aaA" }));
     }
 
 }
