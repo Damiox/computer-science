@@ -6,6 +6,11 @@ import java.util.Iterator;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 
+/**
+ * Array List Implementation.
+ *
+ * @author dnardelli
+ */
 public class ArrayListExercise implements Exercise<Integer[], ArrayListExercise.ArrayList> {
 
     @Override
