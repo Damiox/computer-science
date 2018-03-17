@@ -12,4 +12,15 @@ public abstract class SortingExercise implements Exercise<Integer[], Integer[]> 
         A[j] = temp;
     }
 
+    public Integer[] solve(String S) {
+        final char[] chars = S.toCharArray();
+        final int n = chars.length;
+        final Integer[] values = new Integer[n];
+        for (int i = 0 ; i < chars.length ; i++) {
+            values[i] = Character.codePointAt(chars, i);
+        }
+
+        return this.solve(values);
+    }
+
 }

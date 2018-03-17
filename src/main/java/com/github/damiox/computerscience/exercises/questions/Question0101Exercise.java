@@ -2,6 +2,7 @@ package com.github.damiox.computerscience.exercises.questions;
 
 import com.github.damiox.computerscience.Exercise;
 import com.github.damiox.computerscience.exercises.sorting.HeapSortExercise;
+import com.github.damiox.computerscience.exercises.sorting.SortingExercise;
 
 /**
  * Is Unique: Implement an algorithm to determine if a string
@@ -18,7 +19,7 @@ import com.github.damiox.computerscience.exercises.sorting.HeapSortExercise;
  */
 public class Question0101Exercise implements Exercise<String, Boolean> {
 
-    private static final Sort SORT = new Sort();
+    private static final SortingExercise SORT = new HeapSortExercise();
 
     @Override
     public Boolean solve(String S) {
@@ -26,10 +27,10 @@ public class Question0101Exercise implements Exercise<String, Boolean> {
             throw new IllegalArgumentException("S cannot be empty");
         }
 
-        final Integer[] values = SORT.sort(S);
-        int prev = values[0];
-        for (int i = 1 ; i < values.length ; i ++) {
-            int curr = values[i];
+        final Integer[] sortedS = SORT.solve(S);
+        int prev = sortedS[0];
+        for (int i = 1 ; i < sortedS.length ; i++) {
+            int curr = sortedS[i];
             if (prev == curr) {
                 return false;
             }
@@ -37,21 +38,6 @@ public class Question0101Exercise implements Exercise<String, Boolean> {
         }
 
         return true;
-    }
-
-    private static class Sort {
-        Integer[] sort(String S) {
-            // Our HeapSort takes an array of Integer as parameter
-            // so we will convert our S into an array of integers
-            final char[] chars = S.toCharArray();
-            final int n = chars.length;
-            final Integer[] values = new Integer[n];
-            for (int i = 0 ; i < chars.length ; i++) {
-                values[i] = Character.codePointAt(chars, i);
-            }
-
-            return new HeapSortExercise().solve(values);
-        }
     }
 
 }
