@@ -13,6 +13,11 @@ import com.github.damiox.computerscience.exercises.sorting.SortingExercise;
  * Time Complexity: O(n log n)
  * Space Complexity: O(1)
  *
+ * Alternative solution: we can use a Hashtable and by doing that we'd
+ * reduce the time complexity to O(n), but we'd need space complexity
+ * of O(n). IMO it's better to have space complexity of O(1) and a
+ * time complexity of O(n log n)
+ *
  * @author dnardelli
  */
 public class Question0102Exercise implements Exercise<Question0102Exercise.Params, Boolean> {

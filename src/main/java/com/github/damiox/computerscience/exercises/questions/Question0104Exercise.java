@@ -6,12 +6,14 @@ import com.github.damiox.computerscience.exercises.sorting.SortingExercise;
 
 /**
  * Palindrome Permutation: Given a string, write a function to check
- * if it is a permutation of a palin- drome. A palindrome is a word
+ * if it is a permutation of a palindrome. A palindrome is a word
  * or phrase that is the same forwards and backwards. A permutation
- * is a rearrangement of letters.The palindrome does not need to be
+ * is a rearrangement of letters. The palindrome does not need to be
  * limited to just dictionary words.
  *
- * Solution: We can sort the String and then count the number of chars.
+ * Solution: Palindromes are composed by a prefix and suffix which are
+ * (in reverse) equally.
+ * Then, We can sort the String and then count the number of chars.
  * We know there are some restrictions about palindromes.
  * 1) if chars are found an even number of times, that's fine.
  * 2) if chars are found an odd number of times, that can only happen once.
