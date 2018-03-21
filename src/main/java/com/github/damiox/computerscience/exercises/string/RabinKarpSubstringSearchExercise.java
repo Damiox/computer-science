@@ -21,7 +21,7 @@ import com.github.damiox.computerscience.Exercise;
  */
 public class RabinKarpSubstringSearchExercise implements Exercise<String[], Boolean> {
 
-    private static final long PRIME_NUMBER = 101;
+    private static final long PRIME_NUMBER = 3;
 
     @Override
     public Boolean solve(String[] params) {
@@ -109,8 +109,8 @@ public class RabinKarpSubstringSearchExercise implements Exercise<String[], Bool
         long H = 0;
 
         for (int i = 0 ; i < S.length() ; i++) {
-            int c = S.charAt(i);
-            H += c * Math.pow(PRIME_NUMBER, i);
+            char c = S.charAt(i);
+            H += (long)c * Math.pow(PRIME_NUMBER, i);
         }
 
         return H;
