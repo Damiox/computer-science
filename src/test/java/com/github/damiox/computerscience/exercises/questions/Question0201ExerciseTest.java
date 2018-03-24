@@ -12,7 +12,7 @@ public class Question0201ExerciseTest {
 
     @Test
     public void testSolve() {
-        Question0201Exercise.Result result;
+        Question0201Exercise.Result<Integer> result;
 
         result = new Question0201Exercise<Integer>().solve(Utils.buildNodes(Arrays.asList(5, 3, 2, 1, 5, 3, 4, 6, 5, 2)));
         Assert.assertEquals(Arrays.asList(5, 3, 2, 1, 4, 6), Utils.getValues(result.deduped1));
@@ -45,7 +45,7 @@ public class Question0201ExerciseTest {
             Question0201Exercise.Node<T> curr = null;
 
             for (T value : values) {
-                Question0201Exercise.Node node = new Question0201Exercise.Node<T>(value, null, null);
+                Question0201Exercise.Node<T> node = new Question0201Exercise.Node<T>(value, null, null);
 
                 if (head == null) {
                     head = node;
